@@ -1,12 +1,12 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-int bitrev(char byte) {
+char bitrev(char byte) {
 	
-	int i,s;
-	char c;
+	int s;
+	char r;
 	s = sizeof(char)*8-1;
-	c = byte;
+	r = byte;
 
 	for(byte >>= 1; byte; byte >>= 1) {
 		r <<= 1;
@@ -18,4 +18,9 @@ int bitrev(char byte) {
 
 
 int main() {
+	char x;
+	x = 0x4F;
+	printf("Orig: %d, Rev: %d", x, bitrev(x));
+	
+	return 0;
 }
